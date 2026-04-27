@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shah Bhai AI VIP Hub</title>
+    <title>IB3D AI Content Hub</title>
     <style>
         :root { --neon: #00ffcc; --bg: #0a0a0a; }
         body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 20px; }
@@ -28,16 +28,18 @@
         <div class="card"><span class="code">4040</span>Tank</div>
         <div class="card"><span class="code">0000</span>Dirt Bike</div>
         <div class="card"><span class="code">3333</span>Lamborghini</div>
+        <div class="card"><span class="code">8000</span>Helicopter</div>
+        <div class="card"><span class="code">600</span>Dog</div>
     </div>
 
     <div class="ai-section">
         <h2>Shah AI Content Studio 🤖</h2>
-        <input type="text" id="aiPrompt" class="ai-input" placeholder="Topic likhen (e.g. New Thar Stunt)...">
+        <input type="text" id="aiPrompt" class="ai-input" placeholder="Topic likhen (e.g. New Bike Stunt)...">
         <div class="btn-grid">
             <button onclick="generateAI(1)">1. Script</button>
             <button onclick="generateAI(2)">2. Thumbnail</button>
-            <button onclick="generateAI(3)">3. Prompt</button>
-            <button onclick="generateAI(4)">4. Song</button>
+            <button onclick="generateAI(3)">3. Video Prompt</button>
+            <button onclick="generateAI(4)">4. AI Song Lyrics</button>
             <button onclick="generateAI(5)" style="background: #ffcc00;">5. Viral Tags</button>
         </div>
         <div id="aiResult"></div>
@@ -57,14 +59,12 @@
             let resultDiv = document.getElementById('aiResult');
             if(!topic) { alert("Pehle topic likhen!"); return; }
             resultDiv.style.display = "block";
-            if(option === 1) resultDiv.innerHTML = "<b>📜 Script:</b> Salam doston! Aaj hum " + topic + " try karenge!";
-            else if(option === 2) resultDiv.innerHTML = "<b>🖼️ Thumbnail:</b> " + topic + " ki photo pe 'WARNING' likhen.";
-            else if(option === 3) resultDiv.innerHTML = "<b>🎬 AI Prompt:</b> Cinematic shot of " + topic + ", 4k.";
-            else if(option === 4) resultDiv.innerHTML = "<b>🎵 Song:</b> Raftaar meri tez, " + topic + " mera jadu...";
+            if(option === 1) resultDiv.innerHTML = "<b>📜 Script:</b> Salam doston! Aaj hum " + topic + " try karenge. Ye bohot viral honay wala hai!";
+            else if(option === 2) resultDiv.innerHTML = "<b>🖼️ Thumbnail:</b> " + topic + " ki photo lagayen aur side par 'OMG' likhen.";
+            else if(option === 3) resultDiv.innerHTML = "<b>🎬 Video Prompt:</b> Hyper-realistic gaming shot of " + topic + ", 4k resolution.";
+            else if(option === 4) resultDiv.innerHTML = "<b>🎵 Song Lyrics:</b> " + topic + " meri jaan, matti mein udayein dhuwan!";
             else if(option === 5) resultDiv.innerHTML = "<b>🔥 Viral Tags:</b> #ShahBhai #IB3D #Gaming #" + topic.replace(/ /g, "") + " #Viral2026";
         }
     </script>
 </body>
 </html>
-        
-        
