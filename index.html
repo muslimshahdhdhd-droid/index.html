@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shah Bhai AI VIP Hub</title>
+    <style>
+        :root { --neon: #00ffcc; --bg: #0a0a0a; }
+        body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 20px; }
+        h2 { color: var(--neon); text-shadow: 0 0 10px var(--neon); text-transform: uppercase; }
+        .search-box, .ai-input { width: 90%; padding: 15px; border-radius: 30px; border: 2px solid var(--neon); background: #1a1a1a; color: white; margin-bottom: 20px; outline: none; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; max-width: 900px; margin: auto; }
+        .card { background: #1a1a1a; padding: 12px; border-radius: 12px; border-bottom: 3px solid var(--neon); }
+        .code { display: block; font-size: 1.3rem; font-weight: bold; color: var(--neon); }
+        .ai-section { margin-top: 40px; padding: 20px; background: rgba(0,255,204,0.05); border-radius: 20px; border: 1px solid var(--neon); }
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        button { padding: 12px; border-radius: 15px; border: none; background: var(--neon); color: black; font-weight: bold; cursor: pointer; }
+        #aiResult { margin-top: 20px; padding: 15px; background: #000; border-radius: 10px; color: #fff; text-align: left; display: none; border-left: 5px solid var(--neon); }
+    </style>
+</head>
+<body>
+
+    <h2>Cheat Codes 🏎️</h2>
+    <input type="text" id="searchInput" class="search-box" placeholder="Search..." onkeyup="searchCheat()">
+
+    <div class="container" id="cheatContainer">
+        <div class="card"><span class="code">9090</span>Thar</div>
+        <div class="card"><span class="code">4040</span>Tank</div>
+        <div class="card"><span class="code">0000</span>Dirt Bike</div>
+        <div class="card"><span class="code">3333</span>Lamborghini</div>
+    </div>
+
+    <div class="ai-section">
+        <h2>Shah AI Content Studio 🤖</h2>
+        <input type="text" id="aiPrompt" class="ai-input" placeholder="Topic likhen (e.g. New Thar Stunt)...">
+        <div class="btn-grid">
+            <button onclick="generateAI(1)">1. Script</button>
+            <button onclick="generateAI(2)">2. Thumbnail</button>
+            <button onclick="generateAI(3)">3. Prompt</button>
+            <button onclick="generateAI(4)">4. Song</button>
+            <button onclick="generateAI(5)" style="background: #ffcc00;">5. Viral Tags</button>
+        </div>
+        <div id="aiResult"></div>
+    </div>
+
+    <script>
+        function searchCheat() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                let text = cards[i].innerText.toLowerCase();
+                cards[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+        function generateAI(option) {
+            let topic = document.getElementById('aiPrompt').value;
+            let resultDiv = document.getElementById('aiResult');
+            if(!topic) { alert("Pehle topic likhen!"); return; }
+            resultDiv.style.display = "block";
+            if(option === 1) resultDiv.innerHTML = "<b>📜 Script:</b> Salam doston! Aaj hum " + topic + " try karenge!";
+            else if(option === 2) resultDiv.innerHTML = "<b>🖼️ Thumbnail:</b> " + topic + " ki photo pe 'WARNING' likhen.";
+            else if(option === 3) resultDiv.innerHTML = "<b>🎬 AI Prompt:</b> Cinematic shot of " + topic + ", 4k.";
+            else if(option === 4) resultDiv.innerHTML = "<b>🎵 Song:</b> Raftaar meri tez, " + topic + " mera jadu...";
+            else if(option === 5) resultDiv.innerHTML = "<b>🔥 Viral Tags:</b> #ShahBhai #IB3D #Gaming #" + topic.replace(/ /g, "") + " #Viral2026";
+        }
+    </script>
+</body>
+</html>
+        
+        
